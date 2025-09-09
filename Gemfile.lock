@@ -168,6 +168,10 @@ GEM
       racc (~> 1.4)
     nokogiri (1.17.2-x86_64-linux)
       racc (~> 1.4)
+    pg (1.6.2)
+    pg (1.6.2-arm64-darwin)
+    pg (1.6.2-x86_64-darwin)
+    pg (1.6.2-x86_64-linux)
     pp (0.6.2)
       prettyprint
     prettyprint (0.2.0)
@@ -307,6 +311,7 @@ DEPENDENCIES
   factory_bot_rails
   importmap-rails
   jbuilder
+  pg
   pry-byebug
   pry-rails
   puma (>= 5.0)

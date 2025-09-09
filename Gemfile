@@ -53,7 +53,8 @@ group :development, :test do
   gem 'pry-rails'     # Rails console mein Pry
   gem 'pry-byebug'
   gem 'rspec-rails'
-  gem 'factory_bot_rails'  
+  gem 'factory_bot_rails'
+  gem 'pg'
 end
 
 group :development do
