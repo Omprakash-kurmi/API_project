@@ -6,7 +6,7 @@ RSpec.describe ProductsController, type: :controller do
 
      it '#GET index found all data'do
       product = Product.create(name: "tea", price: 102.2, stock: 2)
-      expect(product['name']).to eq(product.price)
+      expect(product['name']).to eq(product.name)
      end
     end 
   end
