@@ -1,17 +1,44 @@
-// Sass variable overrides must be declared before loading up Active Admin's styles.
-//
-// To view the variables that Active Admin provides, take a look at
-// `app/assets/stylesheets/active_admin/mixins/_variables.scss` in the
-// Active Admin source.
-//
-// For example, to change the sidebar width:
-// $sidebar-width: 242px;
+@import "arctic_admin/base";
+@import "activeadmin/quill_editor/quill.snow";
+@import "activeadmin/quill_editor_input";
 
-// Active Admin's got SASS!
-@import "active_admin/mixins";
-@import "active_admin/base";
 
-// Overriding any non-variable Sass must be done after the fact.
-// For example, to change the default status-tag color:
-//
-//   .status_tag { background: #6090DB; }
+#active_admin_content form ul li {
+    color: red;
+    font-size: inherit;
+}
+
+.select2-container--default .select2-selection--multiple .select2-selection__rendered {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+}
+
+#active_admin_content #terms_and_condition_description .ql-formats .ql-image {
+  display: none;
+}
+
+#active_admin_content #about_us_description .ql-formats .ql-image {
+  display: none;
+}
+
+// Hide bulk action delete on first reload
+html body.index.admin_accounts.active_admin.logged_in.admin_namespace div#wrapper div#active_admin_content.with_sidebar div#main_content_wrapper div#main_content form#collection_selection div.table_tools div.batch_actions_selector.dropdown_menu div.dropdown_menu_list_wrapper {
+  display: none;
+}
+
+.submenu ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.submenu ul li {
+  display: inline;
+  margin-right: 10px;
+}
+
+.submenu ul li a {
+  text-decoration: none;
+  color: #000;
+  font-weight: bold;
+}
