@@ -1,5 +1,6 @@
 FactoryBot.define do
-  factory :account_block_role, class: 'AccountBlock::Role' do
-    
+  factory :role, class: 'AccountBlock::Role' do
+    name { "Vandor" }
+    status {"active" }
   end
 end

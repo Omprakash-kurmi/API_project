@@ -38,13 +38,10 @@ jobs:
       - name: Set up JDK 11
         uses: actions/setup-java@v3
         with:
+          distribution: 'temurin'   # ✅ REQUIRED
           java-version: '11'
-<<<<<<< Updated upstream
-          distribution: 'temurin'
-=======
           java-package: 'jdk'
           check-latest: false
->>>>>>> Stashed changes
 
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
