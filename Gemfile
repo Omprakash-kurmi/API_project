@@ -57,6 +57,7 @@ group :development, :test do
   gem 'pg'
   gem 'rubocop', require: false
   gem 'rubocop-rails', require: false
+  gem 'faker'
 end
 
 group :development do
