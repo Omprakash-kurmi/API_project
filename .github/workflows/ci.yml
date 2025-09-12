@@ -39,7 +39,7 @@ jobs:
         uses: actions/setup-java@v3
         with:
           java-version: '11'
-          distribution: 'temurin'  # ✅ Added distribution input
+          distribution: 'temurin'
 
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
