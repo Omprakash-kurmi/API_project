@@ -39,12 +39,17 @@ jobs:
         uses: actions/setup-java@v3
         with:
           java-version: '11'
+<<<<<<< Updated upstream
           distribution: 'temurin'
+=======
+          java-package: 'jdk'
+          check-latest: false
+>>>>>>> Stashed changes
 
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: 3.0.2
+          ruby-version: '3.0.2'
 
       - name: Install dependencies
         run: |
