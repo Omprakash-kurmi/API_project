@@ -28,7 +28,7 @@ jobs:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         run: |
           sonar-scanner \
-            -Dsonar.projectKey=rails_project \
+            -Dsonar.projectKey=Api_project \
             -Dsonar.sources=. \
-            -Dsonar.host.url=https://your-sonarqube-url.com \
+            -Dsonar.host.url=http://localhost:9000
             -Dsonar.login=$SONAR_TOKEN
