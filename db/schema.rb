@@ -10,7 +10,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2025_09_09_144355) do
+ActiveRecord::Schema[7.1].define(version: 2025_09_12_090212) do
+  create_table "account_block_accounts", force: :cascade do |t|
+    t.string "first_name"
+    t.string "last_name"
+    t.string "full_name"
+    t.string "email"
+    t.string "full_phone_number"
+    t.string "password"
+    t.integer "role_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "account_block_roles", force: :cascade do |t|
+    t.string "name"
+    t.string "status"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "active_admin_comments", force: :cascade do |t|
     t.string "namespace"
     t.text "body"
