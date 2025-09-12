@@ -75,6 +75,7 @@ group :test do
   gem "capybara"
   gem "selenium-webdriver"
   gem 'database_cleaner-active_record'
+  gem 'simplecov', require: false
 end
 gem 'activeadmin'
 gem 'devise'
@@ -83,3 +84,4 @@ gem 'sassc'
 gem 'arctic_admin'
 gem 'activeadmin_quill_editor'
 gem 'activeadmin_addons'
+gem 'coveralls', require: false
