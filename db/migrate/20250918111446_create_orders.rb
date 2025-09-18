@@ -1,9 +1,9 @@
 class CreateOrders < ActiveRecord::Migration[7.1]
   def change
-    create_table :orders, if_not_exists: true do |t|
+    create_table :orders do |t|
       t.float :total_amount
       t.string :status
-      t.references :account, null: false, foreign_key: true
+      t.integer :account_id
 
       t.timestamps
     end
