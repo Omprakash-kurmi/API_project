@@ -1,6 +1,6 @@
 class CreateCategories < ActiveRecord::Migration[7.1]
   def change
-    create_table :categories, if_not_exists: true do |t|
+    create_table :categories do |t|
       t.string :name
 
       t.timestamps

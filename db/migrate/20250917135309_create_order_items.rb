@@ -1,10 +1,10 @@
 class CreateOrderItems < ActiveRecord::Migration[7.1]
   def change
-    create_table :order_items, if_not_exists: true do |t|
+    create_table :order_items do |t|
       t.float :price
       t.integer :quantity
-      t.references :order, null: false, foreign_key: true
-      t.references :product, null: false, foreign_key: true
+      t.integer :order_id
+      t.integer :product_id
 
       t.timestamps
     end
