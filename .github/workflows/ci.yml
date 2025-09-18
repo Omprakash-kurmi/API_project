@@ -58,6 +58,7 @@ jobs:
           cp config/database.yml.github-actions config/database.yml
           bin/rails db:create
           bin/rails db:schema:load
+          bin/rails db:migrate
 
       - name: Run tests with coverage
         run: |

@@ -1,10 +1,8 @@
 class ProductsController < ApplicationController
   def create
-    # byebug
     product = Product.new(product_params)
-    binding.pry
     if product.save
-     return render json: { data: product, status: :ok, message: "product created successfully" }
+     return render json: { data: format_product(product), status: :ok, message: "product created successfully" }
     else
      return render json: { errors: product.errors, status: :unprocessable_entity }
     end
@@ -13,7 +11,7 @@ class ProductsController < ApplicationController
   def update
    product = Product.find_by(id: params[:id])
    if product.present? && product.update(product_params)
-      return render json: {data: product, status: :ok, message: "product updated successfully"}
+      return render json: {data: format_product(product), status: :ok, message: "product updated successfully"}
     else
      return render json: { errors: "Product not found", status: :unprocessable_entity }
    end
@@ -22,7 +20,7 @@ class ProductsController < ApplicationController
   def show
    product = Product.find_by(id: params[:id])
    if product.present?
-      return render json: { data: product, status: :ok }
+      return render json: { data: format_product(product), status: :ok }
     else
      return render json: { errors: "Product not found", status: :unprocessable_entity }
    end
@@ -44,6 +42,12 @@ class ProductsController < ApplicationController
   private
 
   def product_params
-    params.require(:product).permit(:id, :name, :description, :price, :stock)
+    params.require(:product).permit(:id, :name, :description, :price, :stock, :category_id, images: [])
+  end
+
+  def format_product(product)
+    product.as_json.merge(
+      images: product.images.map { |img| url_for(img) }
+    )
   end
 end
