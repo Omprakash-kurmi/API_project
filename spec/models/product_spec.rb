@@ -11,9 +11,10 @@ RSpec.describe Product, type: :model do
 
   describe 'scopes' do
     before do
-      @cheap_product = Product.create!(name: "Cheap Product", price: 50, stock: 5)
-      @expensive_product = Product.create!(name: "Expensive Product", price: 150, stock: 5)
-      @named_product = Product.create!(name: "Special Product", price: 80, stock: 5)
+      category = Category.create!(name: "jank food")
+      @cheap_product = Product.create!(name: "Cheap Product", price: 50, stock: 5, category_id: category.id)
+      @expensive_product = Product.create!(name: "Expensive Product", price: 150, stock: 5, category_id: category.id)
+      @named_product = Product.create!(name: "Special Product", price: 80, stock: 5, category_id: category.id)
     end
 
     describe '.cheap' do
